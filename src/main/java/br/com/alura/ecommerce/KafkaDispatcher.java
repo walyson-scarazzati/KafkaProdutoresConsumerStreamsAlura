@@ -11,12 +11,12 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-public class KafkaDispatcher implements Closeable {
+public class KafkaDispatcher<T> implements Closeable {
 	
-	private KafkaProducer<String, String> producer;
+	private KafkaProducer<String, T> producer;
 
 	KafkaDispatcher() {
-		this.producer = new KafkaProducer<String, String>(properties());
+		this.producer = new KafkaProducer<>(properties());
 	}
 	
 	 static Properties properties() {
@@ -27,7 +27,7 @@ public class KafkaDispatcher implements Closeable {
 		return properties;
 	}
 
-	 void send(String topic, String key, String value) throws InterruptedException, ExecutionException {
+	 void send(String topic, String key, T value) throws InterruptedException, ExecutionException {
 		KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties());
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>(topic, key, value);
 		  Callback callback = (data, ex) -> {
