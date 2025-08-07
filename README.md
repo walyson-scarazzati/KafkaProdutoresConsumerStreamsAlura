@@ -1,6 +1,6 @@
 # Ecommerce Kafka Microservices Project
 
-This project is from Alura Kafka: produtores, consumidores e streams is a set of Java microservices for an ecommerce system, using Apache Kafka for messaging. It is organized as a Maven multi-module project, with each service in its own module.
+This project is from [alura.com.br](https://www.alura.com.br/)  Kafka: produtores, consumidores e streams is a set of Java microservices for an ecommerce system, using Apache Kafka for messaging. It is organized as a Maven multi-module project, with each service in its own module.
 
 ## Project Structure
 
