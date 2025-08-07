@@ -19,7 +19,8 @@ public class NewOrderMain {
 					String value = userId + "132123,67523,789289745";
 					orderDispatcher.send("ECOMMERCE_NEW_ORDER", userId, order);
 
-					var email = new Email("Assunto do email", "Corpo do email: Thank you for your order! We are processing it now.");
+					var email = new Email("Assunto do email",
+							"Corpo do email: Thank you for your order! We are processing it now.");
 					emailDispatcher.send("ECOMMERCE_SEND_EMAIL", userId, email);
 				}
 			}

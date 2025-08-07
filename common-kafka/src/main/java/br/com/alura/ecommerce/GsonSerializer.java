@@ -6,10 +6,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class GsonSerializer<T> implements Serializer<T> {
-    private final Gson gson = new GsonBuilder().create();
-    
-    @Override
-    public byte[] serialize(String s, T object) {
-        return gson.toJson(object).getBytes();
-    }
+	private final Gson gson = new GsonBuilder().create();
+
+	@Override
+	public byte[] serialize(String s, T object) {
+		return gson.toJson(object).getBytes();
+	}
 }

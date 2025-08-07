@@ -5,6 +5,7 @@
 	<groupId>br.com.alura</groupId>
 	<artifactId>ecommerce</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<properties>
 		<maven.compiler.source>21</maven.compiler.source>
@@ -28,4 +29,11 @@
 			<version>2.8.6</version>
 		</dependency>
 	</dependencies>
+	<modules>
+		<module>service-email</module>
+		<module>service-fraud-detector</module>
+		<module>service-log</module>
+		<module>service-new-order</module>
+		<module>common-kafka</module>
+	</modules>
 </project>

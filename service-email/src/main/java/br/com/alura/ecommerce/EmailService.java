@@ -8,9 +8,7 @@ public class EmailService {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		EmailService emailService = new EmailService();
 		try (KafkaService service = new KafkaService(EmailService.class.getSimpleName(), "ECOMMERCE_SEND_EMAIL",
-				emailService::parse,
-				Email.class,
-				Map.of())) {
+				emailService::parse, Email.class, Map.of())) {
 			service.run();
 		}
 	}
